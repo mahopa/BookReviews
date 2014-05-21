@@ -1,0 +1,27 @@
+﻿@model BookReviewer.web.Models.AddBookVM
+
+@{
+    ViewBag.Title = "CreateBook";
+}
+
+<h2>CreateBook</h2>
+
+<form method="post">
+    <input type="text" name="Title" placeholder="Title" />
+    <select name="AuthorId">
+        @foreach (var Author in Model.Authors)
+        {
+            <option value="@Author.Id">@Author.Name</option>
+        }
+    </select>
+    <select name="AuthorId">
+        @foreach (var Genre in Model.Genres)
+        {
+            <option value="@Genre">@Genre</option>
+        }
+    </select>
+    <!--<input type="text" name="AuthorId" />
+    <input type="text" name="Genre" />-->
+    <button class="btn" value="submit">Submit Changes</button>
+</form>
+

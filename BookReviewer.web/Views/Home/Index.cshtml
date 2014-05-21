@@ -1,0 +1,17 @@
+﻿@model List<BookReviewer.web.Models.Book>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<table class="table table-bordered">
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td><a href="/Home/BookDetails/@book.Id">@book.Title</a></td>
+                <td>@book.Genre</td>
+                <td><a href="/Home/AuthorDetails/@book.Author.Id">@book.Author.Name</a></td>
+            </tr>
+        }
+    </tbody>
+</table> 

@@ -1,0 +1,27 @@
+﻿@model BookReviewer.web.Models.Book
+@{
+    ViewBag.Title = "BookDetails";
+}
+
+<h2>BookDetails</h2>
+<table class="table-bordered">
+    <tr>
+        <td>
+            
+            @Model.Title
+            @Model.Author.Name
+            @Model.Genre
+            @foreach (var item in Model.Reviews)
+            {
+                @item.Comment
+                @item.Author.Name
+                @item.Date.ToLocalTime()
+                
+
+            }
+                
+
+
+        </td>
+    </tr>
+</table>
